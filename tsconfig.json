@@ -1,14 +1,19 @@
 {
-  "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "module": "ESNext",
-    "outDir": "dist",
-    "alwaysStrict": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "preserveConstEnums": true,
-    "declaration": true
+    "target": "es2021",
+		"lib": ["es2021", "ESNext", "WebWorker"],
+		"module": "es2022",
+		"moduleResolution": "Bundler",
+		"resolveJsonModule": true,
+    "declaration": true,
+		"allowJs": true,
+		"checkJs": false,
+		"noEmit": true,
+		"isolatedModules": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "test"]

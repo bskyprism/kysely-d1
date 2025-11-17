@@ -1,13 +1,8 @@
 {
   "name": "@nichoth/kysely-d1",
   "description": "Kysely dialect for Cloudflare D1",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "version": "0.4.1",
-  "types": "./dist/index.d.ts",
-  "repository": "git@github.com:aidenwallis/kysely-d1.git",
-  "author": "Aiden <aiden@aidenwallis.co.uk>",
-  "license": "MIT",
+  "main": "./dist/index.js",
+  "version": "0.4.5",
   "type": "module",
   "exports": {
     ".": {
@@ -18,6 +13,37 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "lint": "eslint \"./**/*.{ts,js}\"",
+    "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-cjs && npm run build-esm && npm run build-esm:min && npm run build-cjs:min",
+    "build-cjs": "esbuild src/*.ts --format=cjs --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --out-extension:.js=.cjs --sourcemap",
+    "build-cjs:min": "esbuild src/*.ts --format=cjs --minify --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --out-extension:.js=.min.cjs --sourcemap",
+    "build-esm": "esbuild src/*.ts --format=esm --metafile=dist/meta.json --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --sourcemap && tsc --emitDeclarationOnly --project tsconfig.build.json --outDir dist",
+    "build-esm:min": "esbuild ./src/*.ts --format=esm --keep-names --bundle --tsconfig=tsconfig.build.json --minify --out-extension:.js=.min.js --outdir=./dist --sourcemap",
+    "toc": "markdown-toc --maxdepth 3 -i README.md",
+    "preversion": "npm run lint",
+    "version": "npm run toc && auto-changelog -p --template keepachangelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md README.md",
+    "postversion": "git push --follow-tags && npm publish"
+  },
+  "peerDependencies": {
+    "kysely": "^0.28.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230115.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "auto-changelog": "^2.5.0",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "esbuild": "^0.27.0",
+    "markdown-toc": "^1.2.0",
+    "typescript": "^5.9.3"
+  },
+  "author": "Aiden <aiden@aidenwallis.co.uk>",
+  "contributors": [
+    "nichoth <nichoth@nichoth.com> (https://nichoth.com)"
+  ],
+  "repository": "git@github.com:nichoth/kysely-d1.git",
   "keywords": [
     "kysely",
     "cloudflare",
@@ -25,23 +51,5 @@
     "workers",
     "serverless"
   ],
-  "scripts": {
-    "build": "tsc && tsc -p tsconfig.cjs.json && mv dist/cjs/index.js dist/index.cjs && rmdir dist/cjs",
-    "check": "prettier --check src/ example/",
-    "format": "prettier --write src/ example/",
-    "toc": "markdown-toc --maxdepth 3 -i README.md",
-    "version": "npm run toc && auto-changelog -p --template keepachangelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md README.md",
-    "postversion": "git push --follow-tags && npm publish"
-  },
-  "peerDependencies": {
-    "kysely": "^0.23.5"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230115.0",
-    "@tsconfig/node14": "^1.0.3",
-    "auto-changelog": "^2.5.0",
-    "markdown-toc": "^1.2.0",
-    "prettier": "^2.7.1",
-    "typescript": "^4.8.4"
-  }
+  "license": "MIT"
 }
