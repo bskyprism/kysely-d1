@@ -7,7 +7,7 @@
 [Cloudflare D1](https://developers.cloudflare.com/d1/).
 
 ```sh
-npm i -S kysely-d1
+npm i -S @nichoth/kysely-d1
 ```
 
 <details><summary><h2>Contents</h2></summary>
