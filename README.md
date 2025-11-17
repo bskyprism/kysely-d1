@@ -3,11 +3,22 @@
 [![ci](https://github.com/aidenwallis/kysely-d1/actions/workflows/ci.yaml/badge.svg)](https://github.com/aidenwallis/kysely-d1/actions/workflows/ci.yaml)
 [![npm](https://img.shields.io/npm/v/kysely-d1.svg)](https://www.npmjs.com/package/kysely-d1)
 
-[Kysely](https://github.com/koskimas/kysely) adapter for [Cloudflare D1](https://developers.cloudflare.com/d1/).
+[Kysely](https://github.com/koskimas/kysely) adapter for
+[Cloudflare D1](https://developers.cloudflare.com/d1/).
 
-```bash
-npm i kysely-d1
+```sh
+npm i -S kysely-d1
 ```
+
+<details><summary><h2>Contents</h2></summary>
+<!-- toc -->
+</details>
+
+## Fork
+
+This is a fork of [aidenwallis/kysely-d1](https://github.com/aidenwallis/kysely-d1).
+
+-------
 
 This project was largely adapted from [kysely-planetscale](https://github.com/depot/kysely-planetscale).
 
