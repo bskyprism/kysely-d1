@@ -3,7 +3,7 @@
   "description": "Kysely dialect for Cloudflare D1",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "types": "./dist/index.d.ts",
   "repository": "git@github.com:aidenwallis/kysely-d1.git",
   "author": "Aiden <aiden@aidenwallis.co.uk>",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230115.0",
     "@tsconfig/node14": "^1.0.3",
+    "auto-changelog": "^2.5.0",
     "markdown-toc": "^1.2.0",
     "prettier": "^2.7.1",
     "typescript": "^4.8.4"

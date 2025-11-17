@@ -11,7 +11,14 @@ npm i -S kysely-d1
 ```
 
 <details><summary><h2>Contents</h2></summary>
+
 <!-- toc -->
+
+- [Fork](#fork)
+- [Usage](#usage)
+
+<!-- tocstop -->
+
 </details>
 
 ## Fork
