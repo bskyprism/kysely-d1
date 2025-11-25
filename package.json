@@ -2,7 +2,7 @@
   "name": "@nichoth/kysely-d1",
   "description": "Kysely dialect for Cloudflare D1",
   "main": "./dist/index.js",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "type": "module",
   "exports": {
     ".": {
