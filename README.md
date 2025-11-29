@@ -23,7 +23,12 @@ npm i -S @nichoth/kysely-d1
 
 ## Fork
 
-This is a fork of [aidenwallis/kysely-d1](https://github.com/aidenwallis/kysely-d1).
+This is a fork of [aidenwallis/kysely-d1](https://github.com/aidenwallis/kysely-d1),
+to update some dependencies.
+
+* kysely
+* @cloudflare/workers-types
+* typescript
 
 -------
 
