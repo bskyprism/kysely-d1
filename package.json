@@ -1,5 +1,5 @@
 {
-  "name": "@nichoth/kysely-d1",
+  "name": "@bskyprism/kysely-d1",
   "description": "Kysely dialect for Cloudflare D1",
   "main": "./dist/index.js",
   "version": "0.4.7",
@@ -44,7 +44,7 @@
   "contributors": [
     "nichoth <nichoth@nichoth.com> (https://nichoth.com)"
   ],
-  "repository": "git@github.com:nichoth/kysely-d1.git",
+  "repository": "git@github.com:bskyprism/kysely-d1.git",
   "keywords": [
     "kysely",
     "cloudflare",
